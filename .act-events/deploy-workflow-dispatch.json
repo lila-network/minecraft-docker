@@ -1,0 +1,10 @@
+{
+  "inputs": {
+    "version": "1.21.10",
+    "force_rebuild": "false"
+  },
+  "repository": {
+    "default_branch": "main",
+    "full_name": "lila-network/minecraft-docker"
+  }
+}
