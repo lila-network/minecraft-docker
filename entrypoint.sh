@@ -3,8 +3,6 @@ set -eu
 
 : "${MEMORY_MIN:=1G}"
 : "${MEMORY_MAX:=2G}"
-: "${SAVE_ON_STOP:=true}"
-: "${SAVE_DELAY:=5}"
 
 CONSOLE_PIPE="/tmp/minecraft-console"
 SERVER_PID=""
@@ -30,13 +28,6 @@ shutdown() {
   trap - TERM INT
 
   if [ -n "$SERVER_PID" ] && kill -0 "$SERVER_PID" 2>/dev/null; then
-    if [ "$SAVE_ON_STOP" = "true" ]; then
-      echo "Running save-all flush..."
-      printf "save-all flush\n" >&3 || true
-      echo "Waiting $SAVE_DELAY for shutdown..."
-      sleep "$SAVE_DELAY"
-    fi
-
     echo "Sending stop command..."
     printf "stop\n" >&3 || true
 
