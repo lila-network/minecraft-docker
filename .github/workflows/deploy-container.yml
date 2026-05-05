@@ -115,11 +115,3 @@ jobs:
             VCS_REF=${{ github.sha }}
             IMAGE_VERSION=${{ env.IMAGE_TAG }}
             IMAGE_SOURCE=${{ github.server_url }}/${{ github.repository }}
-
-      - name: Generate artifact attestation
-        if: ${{ steps.existing-image.outputs.skip != 'true' && !env.ACT }}
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          subject-digest: ${{ steps.release.outputs.digest }}
-          push-to-registry: true
