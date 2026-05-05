@@ -29,7 +29,7 @@ RUN groupadd -g 10001 minecraft \
     && mkdir -p /opt/minecraft /data \
     && chown -R minecraft:minecraft /opt/minecraft /data
 
-copy ./server.jar /opt/minecraft/server.jar
+COPY ./server.jar /opt/minecraft/server.jar
 
 COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
