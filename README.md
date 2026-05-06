@@ -224,7 +224,8 @@ without typing `:25566`.
 
 ## Security
 
-Minecraft servers are exposed to the internet by design. Take a few basic precautions before making your server public.
+> [!IMPORTANT]
+> Minecraft servers can be exposed to the internet by design. However, if you want to do so, take the following security considerations into account.
 
 ### Do not expose RCON publicly
 
