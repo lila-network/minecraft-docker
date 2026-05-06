@@ -3,6 +3,7 @@ name: Check Minecraft stable release
 on:
   schedule:
     - cron: "28 6 * * *"
+      timezone: "Europe/Berlin"
   workflow_dispatch:
 
 permissions:
