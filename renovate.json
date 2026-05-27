@@ -1,6 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+  "extends": ["local>lila-network/renovate-configs:default"],
+  "description": "lila.network default config"
 }
